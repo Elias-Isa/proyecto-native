@@ -1,38 +1,8 @@
-debugger ;
 
-const user_comprador = "comprador" ;
-const pass_comprador = "contraseña1234" ;
+let confirma_respuesta = confirm ("¿Desea iniciar una compra y añadirlo al carrito?") ;
 
-//Se le solicita al usuario datos para que se registre en la página
-function solicitar_datos () {
-    let usuario = prompt ("Ingrese su usuario") ;
-    let pass = prompt("Ingrese su pass") ;
-
-    if (validacion_datos(usuario,pass)){
-        alert("¡Bienvenido a Native "+usuario+"!") ;
-        inicio_carrito ()
-
-    }else{
-        return solicitar_datos ;
-    }
-}
-
-solicitar_datos()
-
-//Se encarga de validar los datos ingresados con las variables globales
-function validacion_datos(usuario,pass){
-    if (usuario === user_comprador){
-        alert("El usuario ingresado ya está en uso. Por favor, ingrese un nuevo usuario.") ;
-        return solicitar_datos() ;
-    }
-    if (pass === pass_comprador){
-        alert("La contraseña ingresada ya está en uso. Por favor, ingrese una nueva contraseña.") ;
-        return solicitar_datos() ;
-    }else {
-        return true ;
-    }
-    
-
+if(confirma_respuesta){
+    inicio_carrito() ;
 }
 
 // Inicio del carrito de compra
