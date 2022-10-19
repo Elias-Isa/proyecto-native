@@ -1,66 +1,79 @@
+debugger ;
 
-let confirma_respuesta = confirm ("¿Desea iniciar una compra y añadirlo al carrito?") ;
+let ingresar_producto = confirm("¿Desea iniciar una compra y añadirlo a su carrito?") ;
+// Carrito
+const todos_los_productos = [] ;
+// Array de productos existentes
+const producto = [
+    {id: 1, nombre: "Fernet Branca 750 ml", precio: 1600},
+    {id: 2, nombre: "Vodka Smirnoff", precio: 1280},
+    {id: 3, nombre: "Absolut vodka", precio: 3450},
+    {id: 4, nombre: "Gin Larios", precio: 3100},
+]
 
-if(confirma_respuesta){
+if(ingresar_producto){
     inicio_carrito() ;
 }
 
-// Inicio del carrito de compra
-function inicio_carrito (){
-    let lista = "" ;
+
+// Inicio carrito
+function inicio_carrito() {
+    let lista = ""
     let finalizar_carrito = false ;
 
-    while (!finalizar_carrito){
-        let nombre_producto = prompt("Ingrese nombre del producto o comida que desee agregar al carrito") ;
-        let producto = obtener_producto(nombre_producto) ;
+    while(!finalizar_carrito) {
+        let nombre_producto = prompt("Ingrese nombre del producto que desee agregar al carrito") ;
+        // Se pregunta si nombre_producto existe en producto
+        const resultado = producto.find((el) => el.nombre === nombre_producto) ;
 
-        //Se muestra la lista de compras del usuario
-        if (producto){
-            alert("Usted eligió: "+producto) ;
-            lista += "\n"+" - "+producto ;
-
-        }else{
-            //Si cancela la compra, se finaliza el carrito
-            if (nombre_producto === null){
-                finalizar_carrito = true ;
-            }
-
-            alert("Ingrese un producto o comida que desee") ;
+        if(resultado) {
+            alert("El producto ingresado si existe, se añadirá a su carrito.") ;
+            alert("Has añadido al carrito: "+nombre_producto) ;
+            lista += "\n"+" - "+nombre_producto ;
+            // Se agrega el producto al array del carrito
+            todos_los_productos.push((resultado)) ;
+            console.log(todos_los_productos) ;
+        }else {
+            alert("No se encontró el producto.") ;
+        }
+        if(nombre_producto === null){
+            finalizar_carrito = true
         }
     }
-    //Cuadro para confirmar la compra de productos
-    if (lista != ""){
-        let respuesta = confirm ("Desea finalizar la compra de los siguientes productos: "+lista) ;
-        if (respuesta){
+
+    // Cuadro para confirmar la compra
+    if (lista != "") {
+        let respuesta_compra = confirm ("Desea finalizar la compra de los siguientes productos: "+lista) ;
+
+        if(respuesta_compra) {
             alert("¡Gracias por comprar en nuestra tienda!") ;
+
         }else{
-            alert("Se canceló con éxito su compra, se lo devolverá a la sección anterior.") ;
-            return inicio_carrito() ;
+            alert ("Se canceló con exito su compra.") ;
+            return quitar_producto() ;
         }
     }
 }
 
-//Elegir producto, comida o bebida a llevar
-function obtener_producto (nombre_producto) {
-    let producto ;
 
-    switch(nombre_producto){
-        
-        case "Fernet Branca 750 ml" :
-            producto = "Fernet Branca 750 ml"
-            break ;
-        case "Pizza Muzzarella" :
-            producto = "Pizza Muzzarella"
-            break ;
-        case "Sándwiches napolitanos calientes" :
-            producto = "Sándwiches napolitanos calientes"
-            break ;
-        case "Vodka Smirnoff 700 ml" :
-            producto = "Vodka Smirnoff 700 ml"
-            break ;
-        default :
-            producto = false ;
+// Se le preguntará al usuario si quiere quitar un producto y se mostrará en una alerta el producto quitado
+function quitar_producto() {
+    while(quitar_producto) {
+        const producto_a_quitar = prompt("¿Desea quitar un producto de su carrito?") ;
+        // Buscar el producto
+        const producto_existente = todos_los_productos.find((el) => el.nombre === producto_a_quitar) ;
+
+    // Si el producto se encuentra, se elimine del array del carrito
+    if(producto_existente){
+        const index_producto = todos_los_productos.indexOf(producto_a_quitar) ;
+        todos_los_productos.splice(index_producto, ) ;
+        alert(producto_a_quitar+" fue removido de su lista de compras.") ;
+    }else{
+        alert("El producto ingresado no existe.") ;
     }
-
-    return producto ;
+    if (producto_a_quitar === null) {
+        quitar_producto = false ;
+    }
+    }
 }
+
