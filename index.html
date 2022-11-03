@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,67 +7,61 @@
     <!-- Boostrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/style.css">
     <title>Native</title>
 </head>
 
 <body>
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Native</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-                    <a class="nav-link" href="./pages/productos.html">Productos</a>
-                    <a class="nav-link" href="./pages/conocenos.html">Conócenos</a>
-                    <a class="nav-link" href="./pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
+    <header>
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a href="./index.html"><img src="./img/logonative.png" alt="Logo principal de la página"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./pages/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./pages/preguntasfrecuentes.html">Preguntas frecuentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./pages/carrito.html"><i class="bi bi-cart position-relative" id="iconoCarrito">
+                                <span class="position-absolute 
+                                            top-0 
+                                            start-100 
+                                            translate-middle 
+                                            badge 
+                                            rounded-pill 
+                                            bgDanger" id="badgeCarrito">
+                                    0
+                                </span>
+                            </i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
     <main>
         <!-- Inicio -->
-        <section>
+        <section class="hero">
             <div>
                 <h1>Bienvenido a Native</h1>
                 <p>Un lugar creado para una noche de reencuentros con amigos, familiares, compañeros de trabajo, en el cuál van a poder disfrutar de una variedad de bebidas, comidas y buena música para que dicho reencuentro sea inolvidable. Con Native, siempre es posible. </p>
             </div>
         </section>
         <section>
-            <div class="card" style="width: 18rem;">
-                <img src="/img/card1.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h2>Fernet Branca 750 ml</h2>
-                    <p class="card-text"></p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="/img/card2.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h2>Vodka Smirnoff</h2>
-                    <p class="card-text"></p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./img/card4.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h2>Gin Larios</h2>
-                    <p class="card-text"></p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img src="./img/card5.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h2>Whisky Jack Daniels</h2>
-                    <p class="card-text"></p>
-                </div>
-            </div>
+            
         </section>
         <section>
             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -114,8 +108,8 @@
         </div>
     </footer>
     <!-- JavaScript -->
-    <script src="./js/registro.js"></script>
-    <script src="./js/login.js"></script>
+    <!-- <script src="./js/registro.js"></script>
+    <script src="./js/login.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>
