@@ -1,9 +1,8 @@
 // Variables globales que incluyen array de carrito y array de productos
 let carrito = [];
-let producto = [];
+let productos = [];
 
 let gestor;
-const carritoClave = "carrito";
 
 // Escuchar los eventos del DOM cargado
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -17,13 +16,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 // Añadimos el contenido del producto al carrito
 function addCarrito (id) {
-    let prod = document.getElementById("row_"+id);
+    const prod = document.querySelector("#row_"+id);
     let producto = new Producto (id,
         prod.querySelector("h3").textContent,
-        prod.querySelector(".textoCard").textContent.substring(1,6),
+        prod.querySelector(".textoCard").textContent,
         prod.querySelector("img").src
         )
 
-gestor.añadirCarrito(producto);
+gestor.addCart(producto);
 
 }

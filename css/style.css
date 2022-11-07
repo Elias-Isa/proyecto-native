@@ -89,6 +89,7 @@ body {
     border-radius: 5px;
 }
 
+
 .textoCard {
     font-size: 20px;
     color: black;
@@ -103,7 +104,11 @@ body {
 }
 
 /* -Productos mostrados en el carrito- */
-
+#contenedorCarrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 /* ----FOOTER---- */
 footer {
